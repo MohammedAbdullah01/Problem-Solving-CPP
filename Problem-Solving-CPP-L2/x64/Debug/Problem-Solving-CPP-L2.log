@@ -1,2 +1,4 @@
 ﻿  Problem-Solving-CPP-L2.cpp
+C:\Users\mm890\source\repos\Problem-Solving-CPP\Problem-Solving-CPP-L2\Problem-Solving-CPP-L2.cpp(861,9): warning C4244: 'return': conversion from 'float' to 'int', possible loss of data
+C:\Users\mm890\source\repos\Problem-Solving-CPP\Problem-Solving-CPP-L2\Problem-Solving-CPP-L2.cpp(868,12): warning C4244: 'return': conversion from 'double' to 'int', possible loss of data
   Problem-Solving-CPP-L2.vcxproj -> C:\Users\mm890\source\repos\Problem-Solving-CPP\x64\Debug\Problem-Solving-CPP-L2.exe

@@ -6,6 +6,7 @@ using namespace std;
 // p2 : CheckPrime()
 //p3  : isAcceptsDivision()
 
+#pragma region Public Function
 void PrintMessageOnScreen(string msg)
 {
 	cout << msg << endl;
@@ -46,6 +47,16 @@ int ReadNumber()
 	cin >> number;
 	return number;
 }
+
+float ReadNumberFloat()
+{
+	float number;
+	PrintMessageOnScreen("Please Enter Float Number ?");
+	cin >> number;
+	return number;
+}
+#pragma endregion
+
 
 
 #pragma region Problem 1 => (2 Procedure , Function)
@@ -331,34 +342,34 @@ void PrintAllWordsFromAAAToZZZ()
 
 bool GuessPassword(string originalPassword)
 {
-	int counter = 0;
-	string guessPass = "";
-	for (int i = 65; i <= 90; i++)
+int counter = 0;
+string guessPass = "";
+for (int i = 65; i <= 90; i++)
+{
+	for (int j = 65; j <=90 ; j++)
 	{
-		for (int j = 65; j <=90 ; j++)
+		for (int h = 65; h <= 90 ; h++)
 		{
-			for (int h = 65; h <= 90 ; h++)
+			guessPass += (char)i;
+			guessPass += (char)j;
+			guessPass += (char)h;
+			counter++;
+
+			cout << "Trial[" << counter << "] : " << guessPass << endl;
+
+			if (guessPass == originalPassword)
 			{
-				guessPass += (char)i;
-				guessPass += (char)j;
-				guessPass += (char)h;
-				counter++;
-
-				cout << "Trial[" << counter << "] : " << guessPass << endl;
-
-				if (guessPass == originalPassword)
-				{
-					PrintMessageOnScreen("--------------------------------------");
-					PrintMessageOnScreen("Password Is " + originalPassword);
-					cout << "Found after " << counter << " Trail" << endl;
-					PrintMessageOnScreen("--------------------------------------");
-					return true;
-				}
-				guessPass = "";
+				PrintMessageOnScreen("--------------------------------------");
+				PrintMessageOnScreen("Password Is " + originalPassword);
+				cout << "Found after " << counter << " Trail" << endl;
+				PrintMessageOnScreen("--------------------------------------");
+				return true;
 			}
+			guessPass = "";
 		}
 	}
-	return false;
+}
+return false;
 }
 
 #pragma endregion
@@ -496,14 +507,14 @@ void PrintArray(int arr[100], int arrLength)
 #pragma endregion
 
 #pragma region Problem 23 (Procedure)
-void FillArrayWithRandomNumbers(int arr[100] , int &arrLength)
+void FillArrayWithRandomNumbers(int arr[100] , int &arrLength , int startFromNum = 1 , int endToNum = 100)
 {
 	if (arrLength <= 0)
 		arrLength = ReadPositiveNumber("Enter Number Of Elements: \n");
 
 	for (int i = 0; i < arrLength; i++)
 	{
-		arr[i] = RandomNumber(1, 100);
+		arr[i] = RandomNumber(startFromNum, endToNum);
 	}
 }
 #pragma endregion
@@ -729,6 +740,138 @@ void CopyDistinctNumbersToArray(int arrSource[100], int arrDestination[100], int
 	}
 }
 #pragma endregion
+
+#pragma region Problem 41 (Function)
+bool IsPalindromeArray(int arr[100], int length)
+{
+	for (int i = 0; i < length / 2; i++)
+	{
+		if (arr[i] != arr[length - i - 1])
+		{
+			return false;
+		}
+	}
+	return true;
+}
+#pragma endregion
+
+#pragma region Problem 42 (Function)
+int OddCount(int arr[100], int arrLength)
+{
+	int counter = 0;
+	for (int i = 0; i < arrLength; i++)
+	{
+		if ((arr[i] % 2) != 0) {
+			counter++;
+		}
+	}
+	return counter;
+}
+#pragma endregion
+
+#pragma region Problem 43 (Function)
+int EvenCount(int arr[100], int arrLength)
+{
+	int counter = 0;
+	for (int i = 0; i < arrLength; i++)
+	{
+		if ((arr[i] % 2) == 0) {
+			counter++;
+		}
+	}
+	return counter;
+}
+
+#pragma endregion
+
+#pragma region Problem 44 (Function)
+int PositiveCount(int arr[100], int arrLength)
+{
+	int counter = 0;
+	for (int i = 0; i < arrLength; i++)
+	{
+		if (arr[i] > 0) {
+			counter++;
+		}
+	}
+	return counter;
+}
+#pragma endregion
+
+#pragma region Problem 45 (Function)
+int NegativeCount(int arr[100], int arrLength)
+{
+	int counter = 0;
+	for (int i = 0; i < arrLength; i++)
+	{
+		if (arr[i] <= 0) {
+			counter++;
+		}
+	}
+	return counter;
+}
+#pragma endregion
+
+#pragma region Problem 46 (Function)
+float MyAbs(float numNegative)
+{
+	return (numNegative > 0)? numNegative : numNegative * -1;
+}
+#pragma endregion
+
+#pragma region Problem 47 (2 Function)
+float GetFraction(float number)
+{
+	return number - (int)number;
+}
+int MyRound(float number)
+{
+	int intNumber = (int)number;
+
+	if (abs(GetFraction(number)) >= .5)
+	{
+		if (intNumber > 0)
+			++intNumber;
+		else
+			--intNumber;
+	}
+	return intNumber;
+}
+#pragma endregion
+
+#pragma region Problem 48 (Function)
+int MyFloor(float number)
+{
+	int intNum = (int)number;
+	if (intNum < 0)
+	{
+		--intNum;
+	}
+	return intNum;
+}
+#pragma endregion
+
+#pragma region Problem 49 (Function)
+int MyCeil(float number)
+{
+	if (abs(GetFraction(number)) > 0)
+	{
+		if (number > 0)
+			return (int)number + 1 ;
+		else
+			return (int)number;
+	}
+	return number;
+}
+#pragma endregion
+
+#pragma region Problem 50 (Function)
+int MySqrt(float number) 
+{
+	return pow(number , 0.5);
+}
+#pragma endregion
+
 
 
 int main()
@@ -1521,5 +1664,206 @@ int main()
 	PrintMessageOnScreen("Array 2 Distinct Elements:");
 	PrintArray(arrDistinct, arr2Length); */
 	#pragma endregion
+
+	#pragma region Problem 41
+	/* Write a program to fill array with numbers , then check if it is palindrome array or not , note:
+	palindrome array can be read the same from right to left and from left to right 
+	example:
+	input: 
+		10 20 30 30 20 10
+	output:
+		Array Elements: 
+		10 20 30 30 20 10
+
+		Yes array is palindrome
+	*/
+
+	/*int arr[100] = { 10,20,30,30,20,10 }, arrLength = 6;
+
+	if (IsPalindromeArray(arr, arrLength))
+	{
+
+		PrintMessageOnScreen("Yes Array Is Palindrome");
+	}
+	else
+	{
+		PrintMessageOnScreen("No Array Is Not Palindrome");
+	}*/
+
+	#pragma endregion
+
+	#pragma region Problem 42
+	/* Write a program to fill array with max size 100 with random numbers from 1 to 100,
+		then print the count of odd numbers
+		example :
+			input : 10
+			output : 
+			Array Elements : 60 78 15 49 56 6 4 3 21 23
+			Odd Numbers Count Is : 5 
+	*/
+
+	/*int arr[100] , arrLength = 0;
+
+	FillArrayWithRandomNumbers(arr, arrLength);
+
+	PrintMessageOnScreen("\nArray Elements: ");
+	PrintArray(arr  , arrLength);
+
+	int countOddNumbers = OddCount(arr , arrLength);
+	cout << "Odd Numbers Count Is : " << countOddNumbers << endl;*/
+	#pragma endregion
+
+	#pragma region Problem 43
+	/* Write a program to fill array with max size 100 with random numbers from 1 to 100,
+		then print the count of odd numbers
+		example :
+			input : 10
+			output :
+			Array Elements : 60 78 15 49 56 6 4 3 21 23
+			Even Numbers Count Is :  5
+	*/
+
+	/*int arr[100], arrLength = 0;
+
+	FillArrayWithRandomNumbers(arr, arrLength);
+
+	PrintMessageOnScreen("\nArray Elements: ");
+	PrintArray(arr  , arrLength);
+
+	int countEvenNumbers = EvenCount(arr , arrLength);
+	cout << "Even Numbers Count Is : " << countEvenNumbers << endl;*/
+	#pragma endregion
+
+	#pragma region Problem 44
+	/* Write a program to fill array with max size 100 with random numbers from -100 to 100
+	then print the count of positive numbers
+	example :
+		input :
+		17 -9 -9 -90 -72 -100 -4 60 -84 -15
+		Output :
+		Positive Numbers Count Is : 2
+	*/
+
+	/*int arr[100], arrLength = 0;
+
+	FillArrayWithRandomNumbers(arr, arrLength, -100, 100);
+
+	PrintMessageOnScreen("\nArray Elements: ");
+	PrintArray(arr  , arrLength);
+
+	int countPositiveNumbers = PositiveCount(arr , arrLength);
+	cout << "Positive Numbers Count Is : " << countPositiveNumbers << endl;*/
+	#pragma endregion
+
+	#pragma region Problem 45
+	/* Write a program to fill array with max size 100 with random numbers from -100 to 100
+	then print the count of positive numbers
+	example :
+		input :
+		17 -9 -9 -90 -72 -100 -4 60 -84 -15
+		Output :
+		Negative Numbers Count Is : 8
+	*/
+
+	/*int arr[100], arrLength = 0;
+
+	FillArrayWithRandomNumbers(arr, arrLength, -100, 100);
+
+	PrintMessageOnScreen("\nArray Elements: ");
+	PrintArray(arr  , arrLength);
+
+	int countNegativeNumbers = NegativeCount(arr , arrLength);
+	cout << "Negative Numbers Count Is : " << countNegativeNumbers << endl;*/
+	#pragma endregion
+
+	#pragma region Problem 46
+	/* Write a program to print abs of numbers, dont use built in abs function 
+	* example:
+	* input : -10
+	* output : 
+		* My abs Result : 10
+		* C++ abs Result : 10
+	*/
+
+	/*float inputNum = ReadNumberFloat();
+
+	cout << "My abs Result :" << MyAbs(inputNum) << endl;
+
+	cout <<"C++ abs Result : " << abs(inputNum)  << endl;*/
+
+	#pragma endregion
+
+	#pragma region Problem 47
+	/* Write a program to print round of numbers, dont use built in round function
+	* example:
+	* input : 10.7				|	10.3				|	-10.7
+	* output :
+	* --------------------------------------------------------------------------
+		* My round Result : 11	| My round Result : 10	| My round Result : -11
+		* C++ round Result : 11	| C++ round Result : 10	| C++ round Result : -11
+	*/
+
+	/*float inputNum = ReadNumberFloat();
+
+	cout << "My round Result :" << MyRound(inputNum) << endl;
+
+	cout <<"C++ round Result : " << round(inputNum)  << endl;*/
+
+	#pragma endregion
+
+	#pragma region Problem 48
+	/* Write a program to print floor of numbers, dont use built in floor function
+	* example:
+	* input : 10.7				|	10.3				|	-10.3
+	* output :
+	* ---------------------------------------------------------------------------
+		* My Floor Result : 10	| My Floor Result : 10	| My Floor Result : -11
+		* C++ Floor Result : 10	| C++ Floor Result : 10	| C++ Floor Result : -11
+	*/
+
+	/*float inputNum = ReadNumberFloat();
+
+	cout << "My Floor Result :" << MyFloor(inputNum) << endl;
+
+	cout <<"C++ Floor Result : " << floor(inputNum)  << endl;*/
+
+	#pragma endregion
+
+	#pragma region Problem 49
+	/* Write a program to print ceil of numbers, dont use built in ceil function
+	* example:
+	* input : 10.7				|		-10.7
+	* output :
+	* ---------------------------------------------------
+		* My ceil Result : 11	|  My ceil Result : -10
+		* C++ ceil Result : 11	|  C++ ceil Result : -10
+	*/
+
+	/*float inputNum = ReadNumberFloat();
+
+	cout << "My Ceil Result :" << MyCeil(inputNum) << endl;
+
+	cout << "C++ Ceil Result : " << ceil(inputNum) << endl;*/
+
+	#pragma endregion
+
+	
+	#pragma region Problem 50
+	/* Write a program to print sqrt of numbers, dont use built in sqrt function
+	* example:
+	* input : 25			
+	* output :
+	* --------------------------
+		* My sqrt Result : 5	
+		* C++ sqrt Result : 5	
+	*/
+
+	/*float inputNum = ReadNumberFloat();
+	cout << "My Sqrt Result :" << MySqrt(inputNum) << endl;
+
+	cout << "C++ Sqrt Result : " << sqrt(inputNum) << endl;*/
+	#pragma endregion
+
+
 
 } 
