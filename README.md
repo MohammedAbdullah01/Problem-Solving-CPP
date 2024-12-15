@@ -268,7 +268,7 @@ Similar to Problem 49, but after three failed attempts, the system should lock t
 49. [Problem 49: Print Ceil Value Without Built-in Function](#problem-49-print-ceil-value-without-built-in-function)
 50. [Problem 50: Print Square Root Without Built-in Function](#problem-50-print-square-root-without-built-in-function)
 
-## Problem Descriptions and Solutions (Level-1)
+## Problem Descriptions and Solutions (Level-2)
 
 ## Problem 1: Multiplication Table
 Write a program to print the multiplication table from 1 to 10.
@@ -313,109 +313,109 @@ Write a program to read a number and print an inverted number pattern in ascendi
 Write a program to read a number and print an inverted letter pattern in descending order.
 
 ## Problem 15: Inverted Letter Pattern Ascending
-Write a program to read a number and print an inverted letter pattern in ascending order.ddddd
+Write a program to read a number and print an inverted letter pattern in ascending order.
 
-### Problem 16: Calculate Rectangle Area Using Diagonal
-Given the length and diagonal of a rectangle, calculate the area using the Pythagorean theorem. This introduces concepts from geometry and trigonometry.
+## Problem 16: Generate All Words from AAA to ZZZ
+Generate and display all possible three-letter combinations.
 
-### Problem 17: Calculate Triangle Area
-Given the base and height of a triangle, calculate and print the area using the formula: Area = 1/2 * base * height.
+## Problem 17: Password Guessing
+Simulate a brute-force guess for a three-letter password.
 
-### Problem 18: Calculate Circle Area Using Radius
-Ask for the radius of a circle and print its area, using the formula: Area = π * radius².
+## Problem 18: Encrypt and Decrypt Text
+Encrypt and decrypt a given text using simple ASCII manipulation.
 
-### Problem 19: Calculate Circle Area Using Diameter
-Given the diameter of a circle, calculate its area. This problem reinforces understanding the relationship between diameter and radius.
+## Problem 19: Generate Random Numbers
+Print three random numbers within a specified range
 
-### Problem 20: Calculate Circle Area Inscribed in a Square
-Given the side length of a square, calculate the area of the largest circle that can fit inside it. The circle’s diameter is equal to the square’s side length.
+## Problem 20: Generate Random Characters
+Generate random small letters, capital letters, special characters, and digits.
 
-### Problem 21: Calculate Circle Area Along the Circumference
-This problem calculates the area of a circle using its circumference, using the formula: Area = π * (circumference / 2π)².
+## Problem 21: Generate Secure Keys
+Create secure alphanumeric keys with hyphens.
 
-### Problem 22: Calculate Circle Area Inscribed in an Isosceles Triangle
-Given the base and height of an isosceles triangle, calculate the area of the largest circle that can be inscribed within it.
+## Problem 22: Array: Store and Search Elements
+Read elements into an array and search for a specific value.
 
-### Problem 23: Calculate Circle Area Around an Arbitrary Triangle
-This involves calculating the area of a circle that circumscribes a given arbitrary triangle, using the triangle’s sides and the circumradius formula.
+### Problem 23: Array: Fill with Random Numbers
+Populate an array with random numbers.
 
-### Problem 24: Validate Age
-Write a program that asks for the user’s age and checks if it’s valid (i.e., non-negative). If the input is invalid, prompt the user again.
+## Problem 24: Array: Find Maximum Element
+Find the largest number in an array.
 
-### Problem 25: Validate Age with Retry
-This problem is similar to Problem 24, but if the user enters an invalid age, the program should allow them to retry.
+## Problem 25: Array: Find Minimum Element
+Find the smallest number in an array.
 
-### Problem 26: Print Numbers from 1 to N
-Write a program that prints all numbers from 1 to N, where N is input by the user.
+## Problem 26: Array: Sum of Elements
+Calculate the total sum of array elements.
 
-### Problem 27: Print Numbers from N to 1
-In this problem, the program prints numbers in reverse order from N to 1.
+## Problem 27: Array: Average of Elements
+Compute the average of array elements.
 
-### Problem 28: Sum Odd Numbers from 1 to N
-Write a program that sums all the odd numbers from 1 to N, where N is input by the user.
+## Problem 28: Array: Copy Elements to Another Array
+Copy elements from one array to another.
 
-### Problem 29: Sum Even Numbers from 1 to N
-This is similar to Problem 28, but you sum the even numbers instead of odd ones.
+## Problem 29: Array: Copy Prime Numbers
+Extract prime numbers from an array and store them in another array.
 
-### Problem 30: Calculate Factorial
-Ask the user for a number and calculate its factorial (i.e., the product of all positive integers less than or equal to that number).
+## Problem 30: Array: Sum Elements of Two Arrays
+Add corresponding elements of two arrays.
 
-### Problem 31: Calculate Powers of a Number
-Write a program that asks the user for a base and exponent, and then calculates the power (base raised to the exponent).
+## Problem 31: Array: Shuffle Elements
+Shuffle elements of an array randomly.
 
-### Problem 32: Calculate Power of a Number to the Mth Exponent
-This is similar to Problem 31, but it includes a retry feature if the user enters invalid input.
+## Problem 32: Array: Copy in Reverse Order
+Copy an array's elements in reverse order.
 
-### Problem 33: Grade Classification
-Write a program that asks for a student’s marks and classifies them into grades (A, B, C, D, F) based on predefined thresholds.
+## Problem 33: Array: Generate and Display Keys
+Generate secure keys and store them in an array.
 
-### Problem 34: Calculate Commission Based on Sales
-Ask the user for their total sales and calculate their commission based on a percentage rate. Display the total commission.
+## Problem 34: Array: Find Number Position
+Find the index of a specific number in an array.
 
-### Problem 35: Calculate Total Pennies and Dollars
-Write a program that calculates the total amount of pennies, nickels, dimes, and quarters from a given dollar amount.
+## Problem 35: Array: Check Number Existence
+Check if a number exists in an array.
 
-### Problem 36: Basic Arithmetic Calculator
-Create a basic calculator that can perform addition, subtraction, multiplication, and division based on user input.
+## Problem 36: Array: Dynamically Add Numbers
+Dynamically read numbers into an array and extend its length as needed.
 
-### Problem 37: Sum Numbers Until -99
-Write a program that sums numbers entered by the user until the user enters -99, at which point the program should display the total sum.
+## Problem 37: Sum Numbers Until -99
+Continuously sum numbers until the user enters -99.
 
-### Problem 38: Prime Number Check
-Ask the user for a number and check whether it's a prime number. A prime number is one that is greater than 1 and divisible only by 1 and itself.
+## Problem 38: Prime Number Check
+Determine if a given number is prime.
 
-### Problem 39: Calculate Change After Bill Payment
-Ask the user for the total bill amount and the amount paid. Calculate the change to return to the customer.
+## Problem 39: Calculate Change After Bill Payment
+Calculate the change to be returned after bill payment.
 
-### Problem 40: Restaurant Bill Calculation with Tax and Service Fee
-Write a program that calculates the total bill after applying a tax and service fee. The user should input the bill amount.
+## Problem 40: Restaurant Bill Calculation
+Compute the total restaurant bill with tax and service fee.
 
 ### Problem 41: Calculate Time in Weeks, Days, Hours, Minutes
-Given a total number of minutes, calculate how many weeks, days, hours, and minutes it represents.
+Convert hours into weeks, days, hours, and minutes..
 
-### Problem 42: Task Duration in Seconds
-Write a program that calculates the duration of a task in seconds based on input start and end times.
+## Problem 42: Task Duration in Seconds
+Convert a task's duration from hours, minutes, and seconds to total seconds.
 
-### Problem 43: Convert Seconds to Days, Hours, Minutes
-Given a number of seconds, write a program that converts it into days, hours, and minutes.
+## Problem 43: Convert Seconds to Days, Hours, Minutes
+Convert total seconds into days, hours, and minutes.
 
-### Problem 44: Day Name from Number
-Write a program that takes a number (1-7) and outputs the corresponding day of the week (1 = Sunday, 7 = Saturday).
+## Problem 44: Day Name from Number
+Map a number to its corresponding day of the week.
 
-### Problem 45: Month Name from Number
-Write a program that takes a number (1-12) and outputs the corresponding month of the year.
+## Problem 45: Month Name from Number
+Map a number to its corresponding month name.
 
-### Problem 46: Print All Letters from A to Z
-Write a program that prints all letters of the English alphabet from A to Z.
+## Problem 46: Print Letters from A to Z
+Display all uppercase letters from A to Z.
 
-### Problem 47: Calculate Loan Repayment Period
-Write a program that calculates the time needed to repay a loan based on the monthly payment amount and interest rate.
+## Problem 47: Loan Repayment Period
+Calculate the repayment period for a loan.
 
-### Problem 48: Calculate Loan Monthly Installment
-Calculate the monthly installment for a loan based on the loan amount, interest rate, and loan tenure.
+## Problem 48: Loan Monthly Installment
+Compute the monthly installment for a loan.
 
-### Problem 49: ATM PIN Validation
-Create a program that simulates an ATM PIN validation system. The user should input their PIN, and the program should check if it matches a pre-defined PIN.
+## Problem 49: ATM PIN Validation
+Validate an ATM PIN provided by the user.
 
-### Problem 50: ATM PIN Validation with Lockout
-Similar to Problem 49, but after three failed attempts, the system should lock the user out and display an error message.
+## Problem 50: ATM PIN Validation with Lockout
+Extend PIN validation by allowing only three attempts before locking the user out.
