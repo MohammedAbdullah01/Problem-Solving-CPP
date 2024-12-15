@@ -3,15 +3,13 @@
 This repository contains solutions to a variety of programming problems. Each problem is addressed by a C++ program that prompts the user for input and prints the result to the screen. The problems are designed to practice and reinforce core programming concepts such as input/output, conditionals, loops, and basic mathematical operations.
 
 ## Table The Problems Levels 
-1. [Problem-Solving Level-1]#Problem-Solving-Level-1
-2. [Problem-Solving Level-2]#Problem-Solving-Level-2
-3. [Problem-Solving Level-3]#Problem-Solving-Level-3
-4. [Problem-Solving Level-4]#Problem-Solving-Level-4
+1. [Problem-Solving Level-1](#Problem-Solving-Level-1)
+2. [Problem-Solving Level-2](#Problem-Solving-Level-2)
+3. [Problem-Solving Level-3](#Problem-Solving-Level-3)
+4. [Problem-Solving Level-4](#Problem-Solving-Level-4)
 
 
-## Table of Contents 
-
-## Problem-Solving Level-1
+## Problem-Solving-Level-1
 1. [Problem 1: Print Your Name](#problem-1-print-your-name)
 2. [Problem 2: Ask the User for Their Name](#problem-2-ask-the-user-for-their-name)
 3. [Problem 3: Odd or Even Number](#problem-3-odd-or-even-number)
