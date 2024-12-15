@@ -422,8 +422,8 @@ Description: Calculate and display the square root of a number without using bui
 
 
 ## Problem-Solving-Level-3
-1. [Problem 1: Fill a 3x3 matrix with random numbers]
-2. [Problem 2: Print All Prime Numbers from 1 to N](#problem-2-print-all-prime-numbers-from-1-to-n)
+1. [Problem 1: Fill a 3x3 matrix with random numbers](#problem-1-Fill-a-3x3-matrix-with-random-numbers)
+2. [Problem 2: Sum of each row in a matrix](#)
 3. [Problem 3: Check if a Number is Perfect](#problem-3-check-if-a-number-is-perfect)
 4. [Problem 4: Print All Perfect Numbers from 1 to N](#problem-4-print-all-perfect-numbers-from-1-to-n)
 5. [Problem 5: Print a Number in Reverse Order](#problem-5-print-a-number-in-reverse-order)
