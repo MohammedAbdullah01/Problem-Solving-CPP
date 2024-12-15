@@ -418,4 +418,4 @@ Description: Calculate and display the floor of a number without using built-in 
 Description: Calculate and display the ceiling of a number without using built-in functions.
 
 ### Problem 50: Print Square Root Without Built-in Function
-Calculate and display the square root of a number without using built-in functions.
+Description: Calculate and display the square root of a number without using built-in functions.
