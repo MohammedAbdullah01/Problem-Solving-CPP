@@ -270,152 +270,152 @@ Similar to Problem 49, but after three failed attempts, the system should lock t
 
 ## Problem Descriptions and Solutions (Level-2)
 
-## Problem 1: Multiplication Table
-Write a program to print the multiplication table from 1 to 10.
+### Problem 1: Print the Multiplication Table
+Description: Write a program that prints a multiplication table from 1 to 10 in a formatted way.
 
-## Problem 2: Prime Numbers
-Write a program to print all prime numbers from 1 to N.
+### Problem 2: Print All Prime Numbers from 1 to N
+Description: Create a program that lists all prime numbers up to a user-provided number N.
 
-## Problem 3: Perfect Number Check
-Write a program to check if a number is a perfect number. A perfect number is a number whose sum of all divisors equals the number itself.
+### Problem 3: Check if a Number is Perfect
+Description: Determine if a number is a Perfect Number (sum of divisors equals the number)
 
-## Problem 4: Perfect Numbers from 1 to N
-Write a program to print all perfect numbers from 1 to N.
+### Problem 4: Print All Perfect Numbers from 1 to N
+Description: Print all perfect numbers up to a given number N.
 
-## Problem 5: Reverse a Number
-Write a program to read a number and print its digits in reverse order.
+### Problem 5: Print a Number in Reverse Order
+Description: Reverse the digits of a user-provided number and display them.
 
-## Problem 6: Sum of Digits
-Write a program to read a number and print the sum of its digits.
+### Problem 6: Print the Sum of Digits of a Number
+Description: Compute and print the sum of all digits in a given number.
 
-## Problem 7: Reverse Number
-Write a program to read a number and print it reversed.
+### Problem 7: Check if a Number is Palindrome
+Description: Check if a number reads the same backward as forward.
 
-## Problem 8: Digit Frequency
-Write a program to read a digit and a number, then print the frequency of that digit in the number.
+### Problem 8: Print Digit Frequency in a Number
+Description: Count the frequency of a specific digit in a given number.
 
-## Problem 9: All Digit Frequencies
-Write a program to read a number and print the frequency of all its digits.
+### Problem 9: Print All Digit Frequencies in a Number
+Description: Display the frequency of each digit (0-9) in a number.
 
-## Problem 10: Number in Order
-Write a program to read a number and print it in order from left to right.
+### Problem 10: Print a Number in Order from Left to Right
+Description: Print the digits of a number from left to right.
 
-## Problem 11: Palindrome Check
-Write a program to check if a number is a palindrome. A palindrome reads the same from right to left and left to right.
+### Problem 11: Print an Inverted Number Pattern (Descending)
+Description: Create a descending inverted pattern of numbers based on a user-provided input.
 
-## Problem 12: Inverted Number Pattern Descending
-Write a program to read a number and print an inverted number pattern in descending order.
+### Problem 12: Print an Inverted Number Pattern (Ascending)
+Description: Create an ascending inverted pattern of numbers based on a user-provided input.
 
-## Problem 13: Inverted Number Pattern Ascending
-Write a program to read a number and print an inverted number pattern in ascending order.
+### Problem 13: Print an Inverted Letter Pattern (Descending)
+Description: Generate a descending inverted pattern of letters starting from the user-specified count.
 
-## Problem 14: Inverted Letter Pattern Descending
-Write a program to read a number and print an inverted letter pattern in descending order.
+### Problem 14: Print an Inverted Letter Pattern (Ascending)
+Description: Generate an ascending inverted pattern of letters starting from the user-specified count.
 
-## Problem 15: Inverted Letter Pattern Ascending
-Write a program to read a number and print an inverted letter pattern in ascending order.
+### Problem 15: Print an Inverted Letter Pattern (Ascending)
+Description: Similar to Problem 14, create a letter pattern based on the input, with ascending repetitions.
 
-## Problem 16: Generate All Words from AAA to ZZZ
-Generate and display all possible three-letter combinations.
+### Problem 16: Print All Words from AAA to ZZZ
+Description: Generate and display all three-letter combinations from AAA to ZZZ.
 
-## Problem 17: Password Guessing
-Simulate a brute-force guess for a three-letter password.
+### Problem 17: Guess a 3-Letter Password (All Capital)
+Description: Simulate a brute-force approach to guess a user-provided 3-letter password.
 
-## Problem 18: Encrypt and Decrypt Text
-Encrypt and decrypt a given text using simple ASCII manipulation.
+### Problem 18: Encrypt and Decrypt Text
+Description: Encrypt a user-provided text by shifting its ASCII values, and decrypt it back to the original form.
 
-## Problem 19: Generate Random Numbers
-Print three random numbers within a specified range
+### Problem 19: Print 3 Random Numbers from 1 to 10
+Description: Generate and display three random numbers within the range of 1 to 10.
 
-## Problem 20: Generate Random Characters
-Generate random small letters, capital letters, special characters, and digits.
+### Problem 20: Print Random Characters
+Description: Generate random characters, including small letters, capital letters, special characters, and digits.
 
-## Problem 21: Generate Secure Keys
-Create secure alphanumeric keys with hyphens.
+### Problem 21: Generate and Print Keys
+Description: Create and display secure alphanumeric keys in a specified format (e.g., XXXX-XXXX-XXXX-XXXX).
 
-## Problem 22: Array: Store and Search Elements
-Read elements into an array and search for a specific value.
+### Problem 22: Check Element Frequency in an Array
+Description: Prompt the user to input numbers into an array and check the frequency of a specific element.
 
-### Problem 23: Array: Fill with Random Numbers
-Populate an array with random numbers.
+### Problem 23: Fill Array with Random Numbers
+Description: Populate an array with random numbers within a given range.
 
-## Problem 24: Array: Find Maximum Element
-Find the largest number in an array.
+### Problem 24: Print Max Number in an Array
+Description: Determine and display the largest number in an array.
 
-## Problem 25: Array: Find Minimum Element
-Find the smallest number in an array.
+### Problem 25: Print Min Number in an Array
+Description: Determine and display the smallest number in an array.
 
-## Problem 26: Array: Sum of Elements
-Calculate the total sum of array elements.
+### Problem 26: Print Sum of Numbers in an Array
+Description: Calculate and display the sum of all elements in an array.
 
-## Problem 27: Array: Average of Elements
-Compute the average of array elements.
+### Problem 27: Print Average of Numbers in an Array
+Description: Compute and display the average value of numbers in an array.
 
-## Problem 28: Array: Copy Elements to Another Array
-Copy elements from one array to another.
+### Problem 28: Copy Array and Print
+Description: Copy elements from one array to another and display both arrays.
 
-## Problem 29: Array: Copy Prime Numbers
-Extract prime numbers from an array and store them in another array.
+### Problem 29: Copy Only Prime Numbers from Array and Print
+Description: Extract prime numbers from one array and store them in another for display.
 
-## Problem 30: Array: Sum Elements of Two Arrays
-Add corresponding elements of two arrays.
+### Problem 30: Sum Elements of Two Arrays
+Description: Add corresponding elements of two arrays and store the results in a third array.
 
-## Problem 31: Array: Shuffle Elements
-Shuffle elements of an array randomly.
+### Problem 31: Shuffle Array and Print
+Description: Randomly shuffle the elements of an array and display the shuffled result.
 
-## Problem 32: Array: Copy in Reverse Order
-Copy an array's elements in reverse order.
+### Problem 32: Copy Array in Reverse Order and Print
+Description: Copy elements from an array into another array in reverse order.
 
-## Problem 33: Array: Generate and Display Keys
-Generate secure keys and store them in an array.
+### Problem 33: Generate and Fill Keys in Array
+Description: Generate secure keys and store them in an array for display.
 
-## Problem 34: Array: Find Number Position
-Find the index of a specific number in an array.
+### Problem 34: Find Number in Array and Return Index
+Description: Locate a specific number in an array and return its index.
 
-## Problem 35: Array: Check Number Existence
-Check if a number exists in an array.
+### Problem 35: Check if Number is in Array
+Description: Check if a number exists in an array and display a confirmation message..
 
-## Problem 36: Array: Dynamically Add Numbers
-Dynamically read numbers into an array and extend its length as needed.
+### Problem 36: Dynamically Read Numbers into Array
+Description: Dynamically input numbers into an array until the user chooses to stop.
 
-## Problem 37: Sum Numbers Until -99
-Continuously sum numbers until the user enters -99.
+### Problem 37: Copy Array Using AddArrayElement
+Description: Copy one array into another using a custom function to add elements dynamically.
 
-## Problem 38: Prime Number Check
-Determine if a given number is prime.
+### Problem 38: Copy Only Odd Numbers to Another Array
+Description: Extract odd numbers from an array and store them in another array.
 
-## Problem 39: Calculate Change After Bill Payment
-Calculate the change to be returned after bill payment.
+### Problem 39: Copy Only Prime Numbers to Another Array
+Description: Extract prime numbers from an array and store them in another array.
 
-## Problem 40: Restaurant Bill Calculation
-Compute the total restaurant bill with tax and service fee.
+### Problem 40: Copy Distinct Numbers to Another Array
+Description: Copy only distinct numbers from an array into a new array.
 
-### Problem 41: Calculate Time in Weeks, Days, Hours, Minutes
-Convert hours into weeks, days, hours, and minutes..
+### Problem 41: Check if Array is Palindrome
+Description: Check whether the elements of an array form a palindrome.
 
-## Problem 42: Task Duration in Seconds
-Convert a task's duration from hours, minutes, and seconds to total seconds.
+### Problem 42: Count Odd Numbers in Array
+Description: Count and display the number of odd elements in an array.
 
-## Problem 43: Convert Seconds to Days, Hours, Minutes
-Convert total seconds into days, hours, and minutes.
+### Problem 43: Count Even Numbers in Array
+Description: Count and display the number of even elements in an array.
 
-## Problem 44: Day Name from Number
-Map a number to its corresponding day of the week.
+### Problem 44: Count Positive Numbers in Array
+Description: Count and display the number of positive elements in an array.
 
-## Problem 45: Month Name from Number
-Map a number to its corresponding month name.
+### Problem 45: Count Negative Numbers in Array
+Description: Count and display the number of negative elements in an array.
 
-## Problem 46: Print Letters from A to Z
-Display all uppercase letters from A to Z.
+### Problem 46: Print Absolute Value Without Built-in Function
+Description: Calculate and display the absolute value of a number without using built-in functions.
 
-## Problem 47: Loan Repayment Period
-Calculate the repayment period for a loan.
+### Problem 47: Print Round Value Without Built-in Function
+Description: Round a number to the nearest integer without using built-in functions.
 
-## Problem 48: Loan Monthly Installment
-Compute the monthly installment for a loan.
+### Problem 48: Print Floor Value Without Built-in Function
+Description: Calculate and display the floor of a number without using built-in functions.
 
-## Problem 49: ATM PIN Validation
-Validate an ATM PIN provided by the user.
+### Problem 49: Print Ceil Value Without Built-in Function
+Description: Calculate and display the ceiling of a number without using built-in functions.
 
-## Problem 50: ATM PIN Validation with Lockout
-Extend PIN validation by allowing only three attempts before locking the user out.
+### Problem 50: Print Square Root Without Built-in Function
+Calculate and display the square root of a number without using built-in functions.
