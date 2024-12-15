@@ -1,6 +1,6 @@
 # Problem Set Solutions
 
-This repository contains solutions to a variety of programming problems. Each problem is addressed by a C++ program that prompts the user for input and prints the result to the screen. The problems are designed to practice and reinforce core programming concepts such as input/output, conditionals, loops, and basic mathematical operations.
+This repository contains solutions to a variety of programming problems. It is divided into levels from easiest to gradually most difficult, and each problem is addressed by a C++ program that prompts the user to enter data and print the result on the screen. The problems are designed to practice and reinforce basic programming concepts such as input/output, conditions, loops, basic mathematical operations, pointers, arrays, etc.
 
 ## Table The Problems Levels 
 1. [Problem-Solving Level-1](#Problem-Solving-Level-1)
