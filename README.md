@@ -419,3 +419,211 @@ Description: Calculate and display the ceiling of a number without using built-i
 
 ### Problem 50: Print Square Root Without Built-in Function
 Description: Calculate and display the square root of a number without using built-in functions.
+
+
+## Problem-Solving-Level-3
+1. [Problem 1: Print the Multiplication Table](#problem-1-print-the-multiplication-table)
+2. [Problem 2: Print All Prime Numbers from 1 to N](#problem-2-print-all-prime-numbers-from-1-to-n)
+3. [Problem 3: Check if a Number is Perfect](#problem-3-check-if-a-number-is-perfect)
+4. [Problem 4: Print All Perfect Numbers from 1 to N](#problem-4-print-all-perfect-numbers-from-1-to-n)
+5. [Problem 5: Print a Number in Reverse Order](#problem-5-print-a-number-in-reverse-order)
+6. [Problem 6: Print the Sum of Digits of a Number](#problem-6-print-the-sum-of-digits-of-a-number)
+7. [Problem 7: Check if a Number is Palindrome](#problem-7-check-if-a-number-is-palindrome)
+8. [Problem 8: Print Digit Frequency in a Number](#problem-8-print-digit-frequency-in-a-number)
+9. [Problem 9: Print All Digit Frequencies in a Number](#problem-9-print-all-digit-frequencies-in-a-number)
+10. [Problem 10: Print a Number in Order from Left to Right](#problem-10-print-a-number-in-order-from-left-to-right)
+11. [Problem 11: Print an Inverted Number Pattern (Descending)](#problem-11-print-an-inverted-number-pattern-descending)
+12. [Problem 12: Print an Inverted Number Pattern (Ascending)](#problem-12-print-an-inverted-number-pattern-ascending)
+13. [Problem 13: Print an Inverted Letter Pattern (Descending)](#problem-13-print-an-inverted-letter-pattern-descending)
+14. [Problem 14: Print an Inverted Letter Pattern (Ascending)](#problem-14-print-an-inverted-letter-pattern-ascending)
+15. [Problem 15: Print an Inverted Letter Pattern (Ascending)](#problem-15-print-an-inverted-letter-pattern-ascending)
+16. [Problem 16: Print All Words from AAA to ZZZ](#problem-16-print-all-words-from-aaa-to-zzz)
+17. [Problem 17: Guess a 3-Letter Password (All Capital)](#problem-17-guess-a-3-letter-password-all-capital)
+18. [Problem 18: Encrypt and Decrypt Text](#problem-18-encrypt-and-decrypt-text)
+19. [Problem 19: Print 3 Random Numbers from 1 to 10](#problem-19-print-3-random-numbers-from-1-to-10)
+20. [Problem 20: Print Random Characters](#problem-20-print-random-characters)
+21. [Problem 21: Generate and Print Keys](#problem-21-generate-and-print-keys)
+22. [Problem 22: Check Element Frequency in an Array](#problem-22-check-element-frequency-in-an-array)
+23. [Problem 23: Fill Array with Random Numbers](#problem-23-fill-array-with-random-numbers)
+24. [Problem 24: Print Max Number in an Array](#problem-24-print-max-number-in-an-array)
+25. [Problem 25: Print Min Number in an Array](#problem-25-print-min-number-in-an-array)
+26. [Problem 26: Print Sum of Numbers in an Array](#problem-26-print-sum-of-numbers-in-an-array)
+27. [Problem 27: Print Average of Numbers in an Array](#problem-27-print-average-of-numbers-in-an-array)
+28. [Problem 28: Copy Array and Print](#problem-28-copy-array-and-print)
+29. [Problem 29: Copy Only Prime Numbers from Array and Print](#problem-29-copy-only-prime-numbers-from-array-and-print)
+30. [Problem 30: Sum Elements of Two Arrays](#problem-30-sum-elements-of-two-arrays)
+31. [Problem 31: Shuffle Array and Print](#problem-31-shuffle-array-and-print)
+32. [Problem 32: Copy Array in Reverse Order and Print](#problem-32-copy-array-in-reverse-order-and-print)
+33. [Problem 33: Generate and Fill Keys in Array](#problem-33-generate-and-fill-keys-in-array)
+34. [Problem 34: Find Number in Array and Return Index](#problem-34-find-number-in-array-and-return-index)
+35. [Problem 35: Check if Number is in Array](#problem-35-check-if-number-is-in-array)
+36. [Problem 36: Dynamically Read Numbers into Array](#problem-36-dynamically-read-numbers-into-array)
+37. [Problem 37: Copy Array Using AddArrayElement](#problem-37-copy-array-using-addarrayelement)
+38. [Problem 38: Copy Only Odd Numbers to Another Array](#problem-38-copy-only-odd-numbers-to-another-array)
+39. [Problem 39: Copy Only Prime Numbers to Another Array](#problem-39-copy-only-prime-numbers-to-another-array)
+40. [Problem 40: Copy Distinct Numbers to Another Array](#problem-40-copy-distinct-numbers-to-another-array)
+41. [Problem 41: Check if Array is Palindrome](#problem-41-check-if-array-is-palindrome)
+42. [Problem 42: Count Odd Numbers in Array](#problem-42-count-odd-numbers-in-array)
+43. [Problem 43: Count Even Numbers in Array](#problem-43-count-even-numbers-in-array)
+44. [Problem 44: Count Positive Numbers in Array](#problem-44-count-positive-numbers-in-array)
+45. [Problem 45: Count Negative Numbers in Array](#problem-45-count-negative-numbers-in-array)
+46. [Problem 46: Print Absolute Value Without Built-in Function](#problem-46-print-absolute-value-without-built-in-function)
+47. [Problem 47: Print Round Value Without Built-in Function](#problem-47-print-round-value-without-built-in-function)
+48. [Problem 48: Print Floor Value Without Built-in Function](#problem-48-print-floor-value-without-built-in-function)
+49. [Problem 49: Print Ceil Value Without Built-in Function](#problem-49-print-ceil-value-without-built-in-function)
+50. [Problem 50: Print Square Root Without Built-in Function](#problem-50-print-square-root-without-built-in-function)
+
+## Problem Descriptions and Solutions (Level-3)
+
+### Problem 1: Fill a 3x3 matrix with random numbers
+The program generates a 3x3 matrix filled with random numbers between a specified range. It then prints the matrix.
+
+### Problem 2: Sum of each row in a matrix
+After filling the matrix with random numbers, the program computes and prints the sum of each row in the matrix.
+
+### Problem 3: Store row sums in a separate array
+Similar to Problem 2, this program sums the rows of a 3x3 matrix but stores the sums in a separate 1D array for easier access and manipulation.
+
+### Problem 4: Sum of each column in a matrix
+The program calculates the sum of each column in a 3x3 matrix and prints the results.
+
+### Problem 5: Store column sums in a separate array
+This is similar to Problem 4, but the column sums are stored in a separate 1D array and then printed..
+
+### Problem 6: Fill a 3x3 matrix with ordered numbers
+The program fills the matrix with ordered numbers starting from 1, increasing across rows and columns, and then prints the matrix.
+
+### Problem 7: Transpose a matrix
+The program fills a 3x3 matrix with ordered numbers and then transposes the matrix. The original matrix and its transposed version are printed.
+
+### Problem 8: Multiply two matrices
+The program multiplies two randomly filled 3x3 matrices and prints the result.
+
+### Problem 9: Print the middle row and middle column
+After filling a matrix with random numbers, the program prints the middle row and the middle column.
+
+### Problem 10: Sum all numbers in a matrix
+This program computes the sum of all the numbers in a 3x3 matrix and prints the result..
+
+### Problem 11: Compare two matrices for equality
+The program compares two 3x3 matrices and checks if they are equal.
+
+### Problem 12: Check if two matrices are identical
+Similar to Problem 11, this program compares two matrices and checks if they are identical.
+
+### Problem 13: Check if a matrix is an identity matrix
+The program checks if a given 3x3 matrix is an identity matrix. An identity matrix has 1's along its diagonal and 0's elsewhere.
+
+### Problem 14: Check if a matrix is a scalar matrix
+The program checks if a matrix is a scalar matrix, where all diagonal elements are the same, and all off-diagonal elements are zero
+
+### Problem 15: Count the occurrences of a number in a matrix
+This program prompts the user to enter a number and then counts how many times that number appears in a given 3x3 matrix.
+
+### Problem 16: Check if a matrix is sparse
+The program checks if a matrix is sparse. A sparse matrix has more zero elements than non-zero elements.
+
+### Problem 17: Check if a number exists in a matrix
+The program searches a 3x3 matrix to see if a specified number exists in the matrix.
+
+### Problem 18: Find the intersection of two matrices
+This program finds and prints the numbers that are present in both of two 3x3 matrices.
+
+### Problem 19: Minimum and Maximum Numbers in Matrix
+A program to find the minimum and maximum numbers in a matrix of integers. The matrix is filled with random numbers, and the program identifies the smallest and largest values.
+
+### Problem 20: Check if Matrix is Palindrome
+This program checks whether a matrix is a palindrome. A matrix is considered a palindrome if its elements are the same when the matrix is mirrored along its center.
+
+### Problem 21: Fibonacci Series
+The program prints the first 10 numbers of the Fibonacci series.
+
+### Problem 22: Fibonacci Series using Recursion
+This problem prints the Fibonacci series of the first 10 numbers using recursion.
+
+### Problem 23: Print First Letter of Each Word in a String
+The program reads a string and prints the first letter of each word in the string.
+
+### Problem 24: Uppercase First Letter of Each Word
+This program takes a string and capitalizes the first letter of each word.
+
+## Problem 25: Lowercase First Letter of Each Word
+The program reads a string and converts the first letter of each word to lowercase.
+
+### Problem 26: Uppercase and Lowercase All Letters in a String
+This program converts a string to all uppercase and all lowercase letters, then prints the results.
+
+### Problem 27: Invert Case of a Character
+The program reads a character, inverts its case (from uppercase to lowercase and vice versa), and prints the result.
+
+### Problem 28: Invert Case of All Letters in a String
+This problem takes a string and inverts the case of all letters, printing the resulting string.
+
+### Problem 29: Count Small and Capital Letters in a String
+The program counts the number of small and capital letters in a string.
+
+### Problem 30: Count a Specific Character in a String
+This program counts the occurrences of a specified character in a string.
+
+### Problem 31: Count Character Case Insensitively
+The program counts occurrences of a specified character in a string, considering both upper and lower case versions of the character.
+
+### Problem 32: Check if Character is a Vowel
+This program reads a character and checks if it is a vowel (a, e, i, o, u).
+
+### Problem 33: Count Vowels in a String
+The program counts the number of vowels (a, e, i, o, u) in a string.
+
+### Problem 34: Print Vowels in a String
+This program extracts and prints all vowels in a given string.
+
+### Problem 35: Print Each Word in a String
+The program reads a string and prints each word in the string on a new line.
+
+### Problem 36: Count the Number of Words in a String
+This program counts the number of words in a string.
+
+### Problem 37: Split Words into a Vector
+The program splits a string into individual words and stores them in a vector, then prints the words.
+
+### Problem 38: Trim Left, Right, and All Whitespace from a String
+This program demonstrates how to trim whitespace from the left, right, or both sides of a string.
+
+### Problem 39: Join Vector of Strings
+Write a program to join a vector of strings into a single string, with a specified separator.
+
+### Problem 40: Join Array of Strings
+Write a program to join an array of strings into a single string, with a specified separator.
+
+### Problem 41: Reverse Words in a String
+Write a program to reverse the words in a given string.
+
+### Problem 42: Replace Words in String (Built-In Function)
+Write a program to replace specific words in a string using a built-in function.
+
+### Problem 43: Replace Words in String (Custom Function)
+Write a program to replace words in a string using a custom function.
+
+### Problem 44: Remove Punctuation from a String
+Write a program to remove all punctuation from a string.
+
+### Problem 45: Convert Bank Client Data to a Single Line
+Write a program to read a bank client's data and convert it into a single line, with fields separated by a custom delimiter.
+
+### Problem 46: Convert Line Data to Client Record
+Write a program to convert a line of data into a structured client record.
+
+### Problem 47: Add Clients to a File
+Write a program to read client information and save it to a file..
+
+### Problem 48: Display Client List from File
+Write a program to read client data from a file and display it on the screen in a tabular format.
+
+### Problem 49: Find Client by Account Number
+Write a program to search for a client based on their account number.
+
+### Problem 50: Delete Client by Account Number
+Write a program to delete a client’s record based on their account number.
+
+### Problem 51: Update Client Information
+Write a program to update an existing client’s information based on their account number.
