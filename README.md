@@ -756,131 +756,131 @@ Write a program to update an existing client’s information based on their acco
 ### Problem 19: Increase Date by X Weeks
 **Description:** Write a function to increase a given date by a specified number of weeks.
 
-Problem 20: Increase Date by One Month
+### Problem 20: Increase Date by One Month
 Description: Implement a function to increase a given date by one month.
 
-Problem 21: Increase Date by X Months
+### Problem 21: Increase Date by X Months
 Description: Create functions to increase a given date by a specified number of months, with two different approaches.
 
-Problem 22: Increase Date by One Year
+### Problem 22: Increase Date by One Year
 Description: Write a function to increase a given date by one year.
 
-Problem 23: Increase Date by X Years
+### Problem 23: Increase Date by X Years
 Description: Implement functions to increase a given date by a specified number of years, with a faster approach for larger increments.
 
-Problem 24: Increase Date by One Decade
+### Problem 24: Increase Date by One Decade
 Description: Create a function to increase a given date by one decade.
 
-Problem 25: Increase Date by X Decades
+### Problem 25: Increase Date by X Decades
 Description: Write functions to increase a given date by a specified number of decades, with a faster approach for larger increments.
 
-Problem 26: Increase Date by One Century
+### Problem 26: Increase Date by One Century
 Description: Implement a function to increase a given date by one century.
 
-Problem 27: Increase Date by One Millennium
+### Problem 27: Increase Date by One Millennium
 Description: Create a function to increase a given date by one millennium.
 
-Problem 28: Decrease Date by One Day
+### Problem 28: Decrease Date by One Day
 Description: Write a function to decrease a given date by one day.
 
-Problem 29: Decrease Date by X Days
+### Problem 29: Decrease Date by X Days
 Description: Create a function to decrease a given date by a specified number of days.
 
-Problem 30: Decrease Date by One Week
+### Problem 30: Decrease Date by One Week
 Description: Implement a function to decrease a given date by one week.
 
-Problem 31: Decrease Date by X Weeks
+### Problem 31: Decrease Date by X Weeks
 Description: Write a function to decrease a given date by a specified number of weeks.
 
-Problem 32: Decrease Date by One Month
+### Problem 32: Decrease Date by One Month
 Description: Create a function to decrease a given date by one month.
 
-Problem 33: Decrease Date by X Months
+### Problem 33: Decrease Date by X Months
 Description: Write a function to decrease a given date by a specified number of months.
 
-Problem 34: Decrease Date by One Year
+### Problem 34: Decrease Date by One Year
 Description: Implement a function to decrease a given date by one year.
 
-Problem 35: Decrease Date by X Years
+### Problem 35: Decrease Date by X Years
 Description: Write functions to decrease a given date by a specified number of years, with a faster approach for larger increments.
 
-Problem 36: Decrease Date by X Years Faster
+### Problem 36: Decrease Date by X Years Faster
 Description: Create a function to decrease a given date by a specified number of years in a faster manner.
 
-Problem 37: Decrease Date by One Decade
+### Problem 37: Decrease Date by One Decade
 Description: Implement a function to decrease a given date by one decade.
 
-Problem 38: Decrease Date by X Decades
+### Problem 38: Decrease Date by X Decades
 Description: Write functions to decrease a given date by a specified number of decades, with a faster approach for larger increments.
 
-Problem 39: Decrease Date by X Decades Faster
+### Problem 39: Decrease Date by X Decades Faster
 Description: Create a function to decrease a given date by a specified number of decades in a faster manner.
 
-Problem 40: Decrease Date by One Century
+### Problem 40: Decrease Date by One Century
 Description: Implement a function to decrease a given date by one century.
 
-Problem 41: Decrease Date by One Millennium
+### Problem 41: Decrease Date by One Millennium
 Description: Write a function to decrease a given date by one millennium.
 
-Problem 42: Check End of Week
+### Problem 42: Check End of Week
 Description: Create a function to check if a given date is the end of the week.
 
-Problem 43: Check Weekend
+### Problem 43: Check Weekend
 Description: Implement a function to check if a given date falls on a weekend.
 
-Problem 44: Check Business Day
+### Problem 44: Check Business Day
 Description: Write a function to check if a given date is a business day.
 
-Problem 45: Days Until End of Week
+### Problem 45: Days Until End of Week
 Description: Create a function to calculate the number of days until the end of the week from a given date.
 
-Problem 46: Days Until End of Month
+### Problem 46: Days Until End of Month
 Description: Implement a function to calculate the number of days until the end of the month from a given date.
 
-Problem 47: Days Until End of Year
+### Problem 47: Days Until End of Year
 Description: Write a function to calculate the number of days until the end of the year from a given date.
 
-Problem 48: Calculate Actual Vacation Days
+### Problem 48: Calculate Actual Vacation Days
 Description: Create a function to calculate the actual number of vacation days between two dates, excluding weekends.
 
-Problem 49: Vacation Return Date
+### Problem 49: Vacation Return Date
 Description: Implement a function to calculate the return date from a given start date and number of vacation days, excluding weekends.
 
-Problem 50: Check Date After Another
+### Problem 50: Check Date After Another
 Description: Write a function to check if one date is after another date.
 
-Problem 51: Compare Dates
+### Problem 51: Compare Dates
 Description: Create a function to compare two dates and determine if one is before, after, or equal to the other.
 
-Problem 52: Check Overlapping Periods
+### Problem 52: Check Overlapping Periods
 Description: Implement a function to check if two date periods overlap.
 
-Problem 53: Read Period
+### Problem 53: Read Period
 Description: Write a function to read a start and end date for a period from user input.
 
-Problem 54: Get Overlapping Dates
+### Problem 54: Get Overlapping Dates
 Description: Create a function to get the overlapping dates between two periods.
 
-Problem 55: Calculate Period Length in Days
+### Problem 55: Calculate Period Length in Days
 Description: Implement a function to calculate the length of a period in days, optionally including the end date.
 
-Problem 56: Check Date in Period
+### Problem 56: Check Date in Period
 Description: Write a function to check if a given date falls within a specified period.
 
-Problem 57: Calculate Overlapping Days
+### Problem 57: Calculate Overlapping Days
 Description: Create a function to calculate the number of overlapping days between two periods.
 
-Problem 58: Validate Date
+### Problem 58: Validate Date
 Description: Implement a function to validate if a given date is valid.
 
-Problem 59: Convert Date String to Structure
+### Problem 59: Convert Date String to Structure
 Description: Write a function to convert a date string into a date structure.
 
-Problem 60: Convert Date Structure to String
+### Problem 60: Convert Date Structure to String
 Description: Create a function to convert a date structure into a date string.
 
-Problem 61: Replace Word in String
+### Problem 61: Replace Word in String
 Description: Implement a function to replace a word in a string with another word.
 
-Problem 62: Format Date
+### Problem 62: Format Date
 Description: Write a function to format a date according to a specified format.
