@@ -7,8 +7,6 @@
 #include <ctime>
 
 using namespace std;
-//Note:
-//There is a difference between me and the problems 2 problems
 
 #pragma region structs
 struct stDate
@@ -17,6 +15,13 @@ struct stDate
 		Month,
 		Day;
 };
+struct stPeriod
+{
+	stDate DateStart;
+	stDate DateEnd;
+};
+
+
 #pragma endregion
 
 #pragma region Enums
@@ -25,13 +30,17 @@ enum enNumberOfDaysPerMonth
 	January = 1, February, March, April, May, June, July, August, September,
 	October, November, December
 };
+
+enum enDateCompare
+{
+	Before = -1 , Equal, After
+};
 #pragma endregion
 
 #pragma region Defined Function
 short howManyDaysInMonth(short year, enNumberOfDaysPerMonth month);
+bool validateDate(stDate date);
 #pragma endregion
-
-
 
 #pragma region Helper Function
 
@@ -164,13 +173,6 @@ vector<string> SplitEachWordInVector(string str, string delimter = " ")
 	return VWords;
 }
 
-bool validateDate(stDate date) {
-	if (date.Month < 1 || date.Month > 12 || date.Day < 1) {
-		return false;
-	}
-	short daysInMonth = howManyDaysInMonth(date.Year, (enNumberOfDaysPerMonth)date.Month);
-	return date.Day <= daysInMonth;
-}
 #pragma endregion
 
 #pragma region Problem 1 => (Function)
@@ -385,14 +387,7 @@ short dayOfWeekOrder(short year , short month , short day)
 
 short dayOfWeekOrder(stDate date)
 {
-	short
-		a = (14 - date.Month) / 12,
-		y = date.Year - a,
-		m = date.Month + (12 * a) - 2,
-		d = date.Day + y + (y / 4) - (y / 100) + (y / 400) + ((31 * m) / 12);
-
-	return (d % 7) + 1;
-
+	return dayOfWeekOrder(date.Year, date.Month , date.Day);
 }
 
 #pragma endregion
@@ -548,6 +543,13 @@ stDate ReadFullDate()
 	date.Month = ReadNumberInRange(1, 12, "please enter a Month ? ");
 	date.Year = ReadNumberInRange(1000, 3400, "please enter a Year ? ");
 
+	cout << endl;
+
+	/*if (!validateDate(date))
+	{
+		throw invalid_argument("The Date Is invalid.");
+	}*/
+
 	return date;
 }
 
@@ -624,12 +626,14 @@ int calculateDifferenceInDays(stDate date1  , stDate date2, bool IncludingEndDay
 	int days = 0;
 	short swapFlagValue = 1;
 
+	if (IsDate1EqualDate2(date1, date2))
+		return ++days;
+
 	if (!IsDate1BeforeDate2(date1, date2))
 	{
 		swapDates(date1, date2);
 		swapFlagValue = -1;
 	}
-
 
 	while (IsDate1BeforeDate2(date1 , date2))
 	{
@@ -983,47 +987,42 @@ stDate decreaseDateByOneMillennium(stDate date)
 }
 #pragma endregion
 
-#pragma region Problem 45
+#pragma region Problem 45 => (Function)
 bool IsEndOfWeek(stDate date) 
 {
 	return dayOfWeekOrder(date) == 7;
 }
 #pragma endregion
 
-
-#pragma region Problem 46
+#pragma region Problem 46 => (Function)
 bool IsWeekEnd(stDate date)
 {
 	return IsEndOfWeek(date) || dayOfWeekOrder(date) == 6;
 }
 #pragma endregion
 
-
-#pragma region Problem 47
+#pragma region Problem 47 => (Function)
 bool IsBusinessDay(stDate date)
 {
 	return !IsWeekEnd(date);
 }
 #pragma endregion
 
-
-#pragma region Problem 48
+#pragma region Problem 48 => (Function)
 short DaysUntilTheEndOfWeek(stDate date)
 {
 	return 7 - dayOfWeekOrder(date);
 }
 #pragma endregion
 
-
-
-#pragma region Problem 49
+#pragma region Problem 49 => (Function)
 short DaysUntilTheEndOfMonth(stDate date)
 {
 	return howManyDaysInMonth(date.Year , (enNumberOfDaysPerMonth) date.Month) - date.Day;
 }
 #pragma endregion
 
-#pragma region Problem 50
+#pragma region Problem 50 => (Function)
 short DaysUntilTheEndOfYear(stDate date)
 {
 	return IsLastMonthInYear(date.Month) ? DaysUntilTheEndOfMonth(date) :
@@ -1031,6 +1030,228 @@ short DaysUntilTheEndOfYear(stDate date)
 }
 #pragma endregion
 
+#pragma region Problem 51 => (Function)
+short howManyTheActualVacationDaysFromDate1ToDate2(stDate dateFrom , stDate dateTo)
+{
+	short ActualVacation = 0;
+	while (IsDate1BeforeDate2(dateFrom, dateTo))
+	{
+		if (!IsWeekEnd(dateFrom))
+		{
+			ActualVacation++;
+		}
+
+		dateFrom = increaseDateByOneDay(dateFrom);
+	}
+
+	return ActualVacation;
+}
+#pragma endregion
+
+#pragma region Problem 52 => (Function)
+stDate vacationReturnDate(stDate dateFrom, short vacationDays)
+{
+	if (!validateDate(dateFrom))
+		throw invalid_argument("Invalid start date provided.");
+
+	stDate returnDate = dateFrom;
+	while (vacationDays > 0 || IsWeekEnd(returnDate))
+	{ 
+		if (IsBusinessDay(returnDate))
+			vacationDays--;
+
+		returnDate = increaseDateByOneDay(returnDate);
+	}
+
+	if (!validateDate(returnDate))
+		throw runtime_error("Resulting date is invalid.");
+
+	return returnDate;
+}
+#pragma endregion 
+
+#pragma region Problem 53 => (Function)
+bool IsDate1AfterDate2(stDate date1 , stDate date2)
+{
+	return (!IsDate1BeforeDate2(date1, date2) && !IsDate1EqualDate2(date1, date2));
+}
+#pragma endregion
+
+#pragma region Problem 54 => (Function)
+enDateCompare CompareDates(stDate date1 , stDate date2)
+{
+	return IsDate1BeforeDate2(date1, date2) ? enDateCompare::Before
+		: IsDate1AfterDate2(date1, date2) ? enDateCompare::After 
+		: enDateCompare::Equal;
+}
+#pragma endregion
+
+#pragma region Problem 55 => (3 Function)
+bool IsOverlapPeriods(stPeriod period1 , stPeriod period2)
+{
+	if (!(validateDate(period1.DateStart) && validateDate(period1.DateEnd) &&
+		validateDate(period2.DateStart) && validateDate(period2.DateEnd)))
+	{
+		throw invalid_argument("One or more provided dates are invalid.");
+	}
+
+	return (
+		CompareDates(period2.DateEnd, period1.DateStart) 
+		== enDateCompare::Before ||
+
+		CompareDates(period2.DateStart, period1.DateEnd) 
+		== enDateCompare::After) 
+		? false 
+		: true;
+}
+
+stPeriod ReadPeriod()
+{
+	stPeriod period;
+	cout << "Enter Start Date :\n";
+	period.DateStart = ReadFullDate();
+
+	cout << "Enter End Date :\n";
+	period.DateEnd = ReadFullDate();
+
+	if (CompareDates(period.DateStart, period.DateEnd) == enDateCompare::After) {
+		throw invalid_argument("Start date must not be after end date.");
+	}
+
+	return period;
+}
+
+vector<stDate> getDatesOverlapBetween2Periods(stPeriod period1, stPeriod period2)
+{
+	if (!IsOverlapPeriods(period1, period2)) {
+		return {};
+	}
+
+	stDate overlapStart = CompareDates(period1.DateStart, period2.DateStart) 
+		== enDateCompare::After ? period1.DateStart : period2.DateStart;
+
+	stDate overlapEnd = CompareDates(period1.DateEnd, period2.DateEnd) 
+		== enDateCompare::Before ? period1.DateEnd : period2.DateEnd;
+
+	vector<stDate> datesOverlap;
+
+	while (CompareDates(overlapStart, overlapEnd) != enDateCompare::After)
+	{
+		datesOverlap.push_back(overlapStart);
+		overlapStart = increaseDateByOneDay(overlapStart);
+	}
+
+	return datesOverlap;
+}
+#pragma endregion
+
+#pragma region Problem 56 => (Function)
+short calculatePeriodLengthInDays(stPeriod period , bool includeEndDate = false)
+{
+	return calculateDifferenceInDays(period.DateStart, period.DateEnd, includeEndDate);
+		
+}
+#pragma endregion
+
+#pragma region Problem 57 => (Function)
+bool isDateInPeriod(stPeriod period , stDate date)
+{
+	return (CompareDates(date, period.DateStart) != enDateCompare::Before) &&
+		(CompareDates(date, period.DateEnd) != enDateCompare::After);
+}
+#pragma endregion
+
+#pragma region Problem 58 => (Function)
+short howManyDaysOverlap(stPeriod period1, stPeriod period2 , bool includeEndDate = false)
+{
+	if (!IsOverlapPeriods(period1, period2)) {
+		return 0;
+	}
+
+	stDate overlapStart = CompareDates(period1.DateStart, period2.DateStart)
+		== enDateCompare::After ? period1.DateStart : period2.DateStart;
+
+	stDate overlapEnd = CompareDates(period1.DateEnd, period2.DateEnd)
+		== enDateCompare::Before ? period1.DateEnd : period2.DateEnd;
+
+	return calculateDifferenceInDays(overlapStart, overlapEnd, includeEndDate);
+}
+#pragma endregion
+
+#pragma region Problem 59 => (Function)
+bool validateDate(stDate date) {
+	if (date.Month < 1 || date.Month > 12 || date.Day < 1 || date.Day > 31) {
+		return false;
+	}
+	short daysInMonth = howManyDaysInMonth(date.Year, (enNumberOfDaysPerMonth)date.Month);
+	return date.Day <= daysInMonth;
+}
+#pragma endregion
+
+#pragma region Problem 60 => (Function)
+stDate convertDateFromDateStringToDateStructure(string dateString, string separator = "/")
+{
+	vector <string> vDate = SplitEachWordInVector(dateString, separator);
+
+	stDate sDate;
+	sDate.Day	= stoi(vDate.at(0));
+	sDate.Month = stoi(vDate.at(1));
+	sDate.Year	= stoi(vDate.at(2));
+
+	if(!validateDate(sDate))
+	{
+		throw invalid_argument("is a Not Valid Date (dd/mm/yyy) : (" + dateString + ")");
+	}
+
+	return sDate;
+}
+#pragma endregion
+
+#pragma region Problem 61 => (Function)
+string convertDateFromDateStructureToDateString(stDate date, string separator = "/")
+{
+	return to_string(date.Day) + 
+		separator + to_string(date.Month) + 
+		separator + to_string(date.Year);
+}
+#pragma endregion
+
+#pragma region Problem 62 => (2 Functions)
+string replaceWordInString(string str, string toReplace, string replacement)
+{
+	if (toReplace.empty())
+	{
+		return str;
+	}
+
+	size_t i = 0;
+	string result = "";
+	while (i < str.length())
+	{
+		if (str.substr(i, toReplace.length()) == toReplace)
+		{
+			result += replacement;
+			i += toReplace.length();
+		}
+		else
+		{
+			result += str[i];
+			i++;
+		}
+	}
+	return result;
+}
+
+string FormatDate(stDate date, string format = "dd/mm/yyy")
+{
+	string formaDate = "";
+	formaDate = replaceWordInString(format, "dd", to_string(date.Day));
+	formaDate = replaceWordInString(formaDate, "mm", to_string(date.Month));
+	formaDate = replaceWordInString(formaDate, "yyyy", to_string(date.Year));
+	return formaDate;
+
+}
+#pragma endregion
 
 
 int main()
@@ -2170,30 +2391,501 @@ ex:
 */
 #pragma endregion
 
+#pragma region Problem 51
+/*
+	Write a program to read vacation period dateFrom and dateTo and make a function to 
+	calculate the actual vacation days.
 
-stDate date = ReadFullDate();
+	Note:Weekends are excluded.
 
+	ex:
+	Vacation Starts:
+		Please enter a Day ? 1 
+		Please enter a month ? 1
+		please enter a year ? 2022
 
+	Vacation Ends:
+		Please enter a Day ? 1
+		Please enter a month ? 5
+		please enter a year ? 2022
 
-if (IsEndOfWeek(date))
-	cout << "\nYes End Of Week\n";
-else
-	cout << "\nNo Not End Of Week\n";
+	Vacation From : Thu , 1/9/2022
+	Vacation To : Mon , 5/9/2022
 
-if (IsWeekEnd(date))
-cout << "\nYes It Is a Weekend\n";
-else
-cout << "\nNo It Is Not a Weekend\n";
+	Actual Vacation Days Is : 2
 
+*/
 
-if (IsBusinessDay(date))
-cout << "\nYes It Is a Business Day.\n";
-else
-cout << "\nNo It Is Not a Business Day\n\n\n";
+/*
+	cout << "Vacation Starts:\n";
+	stDate date1 = ReadFullDate();
 
-cout << "\nDays Until End Of Week : " << DaysUntilTheEndOfWeek(date) << " Day(s)\n";
-cout << "\nDays Until End Of Month : " << DaysUntilTheEndOfMonth(date) <<" Day(s)\n";
-cout << "\nDays Until End Of Year : " << DaysUntilTheEndOfYear(date) << " Day(s)\n";
+	cout << "Vacation End:\n";
+	stDate date2 = ReadFullDate();
 
+	cout << "Vaction From : " 
+	<< getDayName((enDaysNameInWeek)dayOfWeekOrder(date1))
+	<< " , " << FormatDate(date1.Year, date1.Month, date1.Day) << endl;
+
+	cout << "Vaction To : " 
+	<< getDayName((enDaysNameInWeek)dayOfWeekOrder(date2))
+	<< " , " << FormatDate(date2.Year, date2.Month, date2.Day) << endl;
+
+	cout << "\n\nActual Vacation Days Is : "
+	<< howManyTheActualVacationDaysFromDate1ToDate2(date1, date2);
+*/
+#pragma endregion
+
+#pragma region Problem 52
+/*
+	Write a program to read vacation start dateFrom and vacationDays,
+	then make a function to calculate the vacation return date.
+
+	Note:Weekends are excluded.
+
+	ex:
+	Vacation Starts:
+		Please enter a Day ? 1
+		Please enter a month ? 1
+		please enter a year ? 2022
+
+	Please enter vacation days ? 23
+		Return Date : Wed , 2/2/2022
+*/
+
+/*
+	cout << "Vacation Starts:\n";
+	stDate date = ReadFullDate();
+
+	short vacationDays = ReadPositiveNumber("Please Enter Vacation Days ? ");
+
+	stDate returnDate = vacationReturnDate(date , vacationDays) ;
+
+	cout << "\nReturn Date : "
+	<< getDayName((enDaysNameInWeek)dayOfWeekOrder(returnDate)) 
+	<< " , " << FormatDate(returnDate.Year , returnDate.Month , returnDate.Day);
+*/
+#pragma endregion
+
+#pragma region Problem 53
+/*
+	Write a program a read Date1 and Date2 and check if Date1 is after date2 or not.
+
+	ex:
+	Enter Date1:
+		Please enter a Day ? 1
+		Please enter a month ? 1
+		please enter a year ? 2022
+
+	Enter Date2:
+		Please enter a Day ? 1
+		Please enter a month ? 1
+		please enter a year ? 2000
+
+	Yes, Date1 Is After Date2.
+*/
+
+/*
+	cout << "Enter Date1:\n";
+	stDate date1 = ReadFullDate();
+
+	cout << "Enter Date2:\n";
+	stDate date2 = ReadFullDate();
+
+	if (IsDate1AfterDate2(date1 , date2))
+	cout << "\nYes, Date1 Is After Date2.\n";
+	else
+	cout << "\nNo, Date1 Is Not After Date2.\n";
+*/
+#pragma endregion
+
+#pragma region Problem 54
+/*
+	Write a program to read Date1 and Date2 and write a function to compare dates,
+	it should return:
+
+	-1 Before
+	0 Equal
+	1 After
+
+	ex:
+	Enter Date1:
+		Please enter a Day ? 1
+		Please enter a month ? 1
+		please enter a year ? 2000
+
+	Enter Date2:
+		Please enter a Day ? 1
+		Please enter a month ? 1
+		please enter a year ? 2022
+
+		Compare Result = -1
+	------------------------------------
+	Enter Date1:
+		Please enter a Day ? 1
+		Please enter a month ? 1
+		please enter a year ? 2000
+
+	Enter Date2:
+		Please enter a Day ? 1
+		Please enter a month ? 1
+		please enter a year ? 2000
+
+		Compare Result = 0
+	------------------------------------
+	Enter Date1:
+		Please enter a Day ? 1
+		Please enter a month ? 1
+		please enter a year ? 2022
+
+	Enter Date2:
+		Please enter a Day ? 1
+		Please enter a month ? 1
+		please enter a year ? 2000
+
+		Compare Result = 1
+
+*/
+
+/*
+	cout << "Enter Date1:\n";
+	stDate date1 = ReadFullDate();
+
+	cout << "Enter Date2:\n";
+	stDate date2 = ReadFullDate();
+
+	cout << "\nCompare Result = " << CompareDates(date1, date2);
+*/
+#pragma endregion
+
+#pragma region Problem 55
+/*
+	Weite a program to read two periods and check if they overlap or not .
+
+	ex:
+	-----------------
+	Enter Period 1 : 
+	-----------------
+		Enter Start Date:
+			Please enter a Day ? 1
+			Please enter a month ? 2
+			please enter a year ? 2022
+
+		Enter End Date:
+			Please enter a Day ? 10
+			Please enter a month ? 2
+			please enter a year ? 2022
+
+	-----------------
+	Enter Period 2 :
+	-----------------
+		Enter Start Date:
+			Please enter a Day ? 5
+			Please enter a month ? 2
+			please enter a year ? 2022
+
+		Enter End Date:
+			Please enter a Day ? 15
+			Please enter a month ? 2
+			please enter a year ? 2022
+
+	Yes, Periods Overlap.
+
+*/
+
+/*
+	try 
+	{
+		cout << "Enter Period 1:\n";
+		stPeriod period1 = ReadPeriod();
+
+		cout << "Enter Period 2:\n";
+		stPeriod period2 = ReadPeriod();
+
+		if (IsOverlapPeriods(period1, period2))
+		{
+			cout << "\nYes, Periods Overlap\n\n";
+
+			cout << "count Days Overlap = " << howManyDaysOverlap(period1, period2 ,true)
+				<< "\n\n";
+
+			cout << "Dates Overlap Between 2 Periods:\n\n";
+
+			for (stDate &date : getDatesOverlapBetween2Periods(period1, period2))
+			{
+				cout << "- " << FormatDate(date.Year, date.Month, date.Day) << endl;
+			}
+		}
+		else
+		{
+			cout << "\nNo, Periods Is Not Overlap\n\n";
+		}
+
+	}
+	catch (const exception& ex) 
+	{
+			cout << "Error: " << ex.what() << endl;
+	}
+*/
+#pragma endregion
+
+#pragma region Problem 56
+/*
+	Write a program to read period and calculate period length in days ?
+
+	ex:
+	-----------------
+	Enter Period 1 :
+	-----------------
+	Enter Start Date:
+		Please enter a Day ? 1
+		Please enter a month ? 1
+		please enter a year ? 2022
+
+	Enter End Date:
+		Please enter a Day ? 5
+		Please enter a month ? 1
+		please enter a year ? 2022
+
+		Period Length Is: 4
+		Period Length (Including End Date) Is: 5
+*/
+
+/*
+	cout << "Enter Period 1:\n";
+	stPeriod period1 = ReadPeriod();
+
+	cout << "Period Length Is: " << calculatePeriodLengthInDays(period1) << endl;
+
+	cout << "\nPeriod Length (Including End Date) Is: " 
+	<< calculatePeriodLengthInDays(period1, true) << endl;
+*/
+#pragma endregion
+
+#pragma region Problem 57 
+/*
+	Write a program to read period and date, then check if date is within this
+	period or not .
+
+	ex:
+	-----------------
+	Enter Period :
+	-----------------
+	Enter Start Date:
+		Please enter a Day ? 1
+		Please enter a month ? 1
+		please enter a year ? 2022
+
+	Enter End Date:
+		Please enter a Day ? 10
+		Please enter a month ? 1
+		please enter a year ? 2022
+
+	Enter Date To Check:
+		Please enter a Day ? 5
+		Please enter a month ? 1
+		please enter a year ? 2022
+
+		Yes, Date Is Within Period
+*/
+
+/*
+	cout << "Enter Period :\n\n";
+	stPeriod period = ReadPeriod();
+
+	cout << "Enter Date To Check :\n\n";
+	stDate date = ReadFullDate();
+
+	if (isDateInPeriod(period , date))
+		cout << "\nYes, Date Is Within Period\n";
+
+	else
+		cout << "\nNo, Date Is Not Within Period\n";
+*/
+#pragma endregion
+
+#pragma region Problem 58
+/*
+	Write a program to read a tow periods then count overlap days .
+
+	ex:
+	-----------------
+	Enter Period 1 : 
+	-----------------
+	Enter Start Date:
+		Please enter a Day ? 1
+		Please enter a month ? 1
+		please enter a year ? 2022
+
+	Enter End Date:
+		Please enter a Day ? 10
+		Please enter a month ? 1
+		please enter a year ? 2022
+
+	-----------------
+	Enter Period 2 :
+	-----------------
+	Enter Start Date:
+		Please enter a Day ? 5
+		Please enter a month ? 1
+		please enter a year ? 2022
+
+	Enter End Date:
+		Please enter a Day ? 30
+		Please enter a month ? 12
+		please enter a year ? 2022
+
+	Overlap Days Count Is : 5
+
+*/
+
+/*
+	cout << "Enter Period 1:\n\n";
+	stPeriod period1 = ReadPeriod();
+
+	cout << "Enter Period 2:\n\n";
+	stPeriod period2 = ReadPeriod();
+
+	cout << "\n\nOverlap Days Count Is : " << howManyDaysOverlap(period1, period2) << endl;
+*/
+#pragma endregion
+
+#pragma region Problem 59
+/*
+	Write a programe to read date and write a function to validate this date .
+	
+	Please enter a Day ? 35
+	Please enter a month ? 1
+	please enter a year ? 2022
+
+		No, date is a not valide date
+	-----------------------------------
+	Please enter a Day ? 29
+	Please enter a month ? 2
+	please enter a year ? 2000
+
+		Yes, date is a valide date
+	-----------------------------------
+
+	Please enter a Day ? 29
+	Please enter a month ? 2
+	please enter a year ? 2022
+
+		No, date is a not valide date
+	-----------------------------------
+
+	Please enter a Day ? 31
+	Please enter a month ? 4
+	please enter a year ? 2022
+
+		No, date is a not valide date
+	-----------------------------------
+	Please enter a Day ? 25
+	Please enter a month ? 15
+	please enter a year ? 2022
+
+		No, date is a not valide date
+*/
+
+/*
+	stDate date = ReadFullDate();
+
+	if (validateDate(date))
+		cout << "\nYes, date is a valide date\n";
+
+	else
+		cout << "\nNo, date is a not valide date\n";
+*/
+#pragma endregion
+
+#pragma region Problem 60
+/*
+	Write a program to read date string and convert it to date structure.
+
+	ex:
+	Please Enter Date dd/mm/yyy ? 31/3/2022
+
+		Day		: 31
+		Month	: 3
+		Year	: 2022
+*/
+
+/*
+	try
+	{
+		string dateString = ReadWord("Please Enter Date dd/mm/yyy ? ");
+		stDate dateStructure = convertDateFromDateStringToDateStructure(dateString);
+
+		cout << "\n\nDate Convert From String To Structure : \n\n";
+
+		cout << "Day: " << dateStructure.Day << endl;
+		cout << "Month: " << dateStructure.Month << endl;
+		cout << "Year: " << dateStructure.Year << endl << endl;
+	}
+	catch (const std::exception& ex)
+	{
+		cout << "\nError: " << ex.what() << endl;
+	}
+*/
+
+#pragma endregion
+
+#pragma region Problem 61
+/*
+	Write a program to read date and convert From Date structure To date string .
+
+	ex:
+	Date structure
+		Please enter a Day ? 31
+		Please enter a month ? 3
+		please enter a year ? 2022
+
+	Date After Converted To String 31/3/2022
+*/
+
+/*
+	stDate date = ReadFullDate();
+
+	string converDateToString = convertDateFromDateStructureToDateString(date);
+
+	cout << "\n\nDate Convert From Structure To String: \n\n";
+	cout << "\nYou Entered: " << converDateToString << endl;
+*/
+#pragma endregion
+
+#pragma region Problem 62
+/*
+	Write a program to read date and write a function to format that date .
+
+	ex:
+
+	Please enter date dd/mm/yyyy ? 31/3/2022
+
+		31/3/2022
+
+		2022/31/3
+
+		3/31/2022
+
+		3-31-2022
+
+		31-3-2022
+
+		Day: 31, Month: 3, Year: 2022
+*/
+
+/*
+	string dateString = ReadWord("Please enter date dd/mm/yyyy ? ");
+	stDate date = convertDateFromDateStringToDateStructure(dateString);
+
+	cout << "\n" << FormatDate(date) << endl;
+	cout << "\n" << FormatDate(date, "yyyy/dd/mm") << endl;
+	cout << "\n" << FormatDate(date, "mm/dd/yyyy") << endl;
+	cout << "\n" << FormatDate(date, "mm-dd-yyyy") << endl;
+	cout << "\n" << FormatDate(date, "dd-mm-yyyy") << endl;
+	cout << "\n" << FormatDate(date, "Day: dd, Month: mm, Year: yyyy") << endl;
+*/
+#pragma endregion
+	
 }
 
