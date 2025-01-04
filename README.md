@@ -695,7 +695,8 @@ Write a program to update an existing client’s information based on their acco
 58. [Problem 58: Validate Date](#problem-58-validate-date)
 59. [Problem 59: Convert Date String to Structure](#problem-59-convert-date-string-to-structure)
 60. [Problem 60: Convert Date Structure to String](#problem-60-convert-date-structure-to-string)
-61. [Problem 61: Replace Word in String](#problem-61-replace-word-in-string) 62. [Problem 62: Format Date](#problem-62-format-date)
+61. [Problem 61: Replace Word in String](#problem-61-replace-word-in-string)
+62. [Problem 62: Format Date](#problem-62-format-date)
 
 ## Problem Descriptions and Solutions (Level-4)
 
